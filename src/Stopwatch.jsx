@@ -22,9 +22,14 @@ function Stopwatch(){
 
 
 
-    function start(){
-        setIsRunning(true);
-        startTimeRef.current = Date.now() - elapsedTime;
+    function startStop(){
+
+        if(isRunning){
+            setIsRunning(false);
+        } else {
+            setIsRunning(true);
+            startTimeRef.current = Date.now() - elapsedTime;
+        }
 
     }
 
@@ -61,8 +66,8 @@ function Stopwatch(){
         <div className= "stopwatch">
             <div className="display">{formatTime()}</div>
             <div className="controls">
-                <button onClick={start} className="start-button">Start</button>
-                <button onClick={stop} className="stop-button">Stop</button>
+                <button onClick={startStop} className={isRunning? 'stop-button' : 'start-button'}> {isRunning ? 'Stop' : 'Start'} </button>
+
                 <button onClick={reset} className="reset-button">Reset</button>
             </div>
         </div>
