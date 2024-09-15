@@ -1,10 +1,7 @@
-import Stopwatch from './Stopwatch.jsx';
+import Stopwatch from "./Stopwatch.jsx";
 
-function App(){
-
-
-
-  return(<Stopwatch/>);
+function App() {
+  return <Stopwatch />;
 }
 
 export default App;
